@@ -7,7 +7,8 @@ const defaultState = {
 			name: 'My Button',
 			numClicks: 0
 		}
-	]
+	],
+	numClicksSum: 0
 }
 
 class MyStore {
@@ -32,9 +33,11 @@ class MyStore {
 
 MyStore.prototype.actions = {
 	add_btnclicks(action) {
-		// console.log(18, 'store.add_btnclicks()', action)
 		const btnState = this.state.buttons[action.id]
 		btnState.numClicks += action.increment
+
+		const appState = this.state
+		appState.numClicksSum += action.increment
 	},
 
 	set_banner(action) {

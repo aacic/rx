@@ -14,11 +14,11 @@ class Counter {
 	}
 
 	getState(appState) {
-		// missing code
+		return appState
 	}
 
 	main() {
-		// missing code
+		this.dom.rightLabel.html(this.state.numClicksSum)
 	}
 }
 
